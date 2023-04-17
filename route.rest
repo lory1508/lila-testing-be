@@ -1,0 +1,119 @@
+GET http://localhost:8080/users
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "Lorenzo Galassi",
+  "publicName": "Accoglienza 1",
+  "role": "receptionist",
+  "password": "e10adc3949ba59abbe56e057f20f883e",
+  "email": "lorenzo@gmail.com"
+}
+
+###
+
+GET http://localhost:8080/doctors
+
+###
+
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "Thor Odinsson",
+  "publicName": "Medico 1",
+  "role": "doctor",
+  "password": "e10adc3949ba59abbe56e057f20f883e",
+  "email": "Thor@gmail.com"
+}
+
+###
+
+POST http://localhost:8080/tests
+Content-Type: application/json
+
+{
+  "eventId": "643911afb4e70b40d787fc4e",
+  "status": "waiting"
+}
+
+###
+
+PATCH http://localhost:8080/tests/6438749af41f0fb25b44d6eb
+Content-Type: application/json
+
+{
+  "doctorId": "643853849552523607ce3ead",
+  "status": "testing"
+}
+
+
+###
+
+GET http://localhost:8080/tests/latest/testing
+
+###
+
+POST http://localhost:8080/tests/latest
+Content-Type: application/json
+
+{
+  "eventId": "643911afb4e70b40d787fc4e",
+  "status": "waiting"
+}
+
+###
+
+POST http://localhost:8080/tests/next
+Content-Type: application/json
+
+{
+  "eventId": "643911afb4e70b40d787fc4e",
+  "status": "waiting"
+}
+
+###
+
+GET http://localhost:8080/tests
+
+###
+
+GET http://localhost:8080/events
+
+###
+
+POST http://localhost:8080/events
+Content-Type: application/json
+
+{
+  "location":"UniCa",
+  "date":"2023-05-08",
+  "doctorsId":["643853849552523607ce3ead", "643854049552523607ce3eb3"],
+  "counselorsId":["643853649552523607ce3eab", "643853c29552523607ce3eaf"],
+  "roomsId":["64387b6fb46c3f2403566f7b", "64387b79b46c3f2403566f7d", "64387b8bb46c3f2403566f7f"]
+}
+
+###
+
+POST http://localhost:8080/rooms
+Content-Type: application/json
+
+{
+  "name": "Sala 5",
+  "type": "testing"
+}
+
+###
+
+DELETE http://localhost:8080/events/64387bb7b46c3f2403566f82
+
+###
+
+DELETE http://localhost:8080/events
+
+###
+
+DELETE http://localhost:8080/tests
